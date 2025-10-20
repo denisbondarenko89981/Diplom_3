@@ -2,7 +2,8 @@ import allure
 
 from pages.main_page import MainPage
 from pages.orders_list_page import OrdersListPage
-from data.data import Urls
+from data.urls import Urls
+from data.constants import Titles
 
 class TestMainPageFunctions:
     @allure.title('Проверка перехода в Конструктор по клику в шапке')
@@ -11,7 +12,7 @@ class TestMainPageFunctions:
         main_page = MainPage(driver)
         main_page.click_on_list_of_orders_btn()
         main_page.click_on_constructor_btn()
-        assert main_page.get_title_of_constructor_page() == 'Соберите бургер'
+        assert main_page.get_title_of_constructor_page() == Titles.CONSTRUCTOR_PAGE
     
     @allure.title('Проверка перехода в Ленту заказов по клику в шапке')
     def test_click_on_list_0f_orders(self, driver):
@@ -19,14 +20,14 @@ class TestMainPageFunctions:
         main_page = MainPage(driver)
         orders_page = OrdersListPage(driver)
         main_page.click_on_list_of_orders_btn()
-        assert orders_page.get_list_of_orders_ttl() == 'Лента заказов'
+        assert orders_page.get_list_of_orders_ttl() == Titles.ORDER_LIST_PAGE
     
     @allure.title('Проверка открытия всплывающего окна с деталями ингредиента при клике на отдельный ингредиент')
     def test_click_on_ingredient(self, driver):
         driver.get(Urls.MAIN_PAGE_URL)
         main_page = MainPage(driver)
         main_page.click_on_bun_n200i()
-        assert main_page.check_title_of_popup() == 'Детали ингредиента'
+        assert main_page.check_title_of_popup() == Titles.INGREDIENT_POPUP
         
     @allure.title('Проверка закрытия всплывающего окна с деталями ингредиента при клике на крестик')
     def test_close_on_popup(self, driver):

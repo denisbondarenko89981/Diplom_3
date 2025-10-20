@@ -10,7 +10,8 @@ class Locators:
     ORDER_AREA = By.XPATH, "//section[contains(@class, 'BurgerConstructor_basket__29Cd7 mt-25 ')]" # Область сборки заказа
     CREATE_ORDER = (By.XPATH, '//button[text()="Оформить заказ"]') # Кнопка оформить заказ
     CLOSE_ORDER_POPUP_BTN = By.XPATH, "//button[contains(@class, 'Modal_modal__close_modified__3V5XS Modal_modal__close__TnseK')]" # Крестик закрытия деталей заказа 
-    ORDER_POPUP= (By.XPATH, '//section[@class="Modal_modal_opened__3ISw4 Modal_modal__P3_V5"]') # Окно деталей заказа
+    ORDER_POPUP= (By.CSS_SELECTOR, "div.Modal_modal__contentBox__sCy8X.pt-30.pb-30") # Окно деталей заказа
+    
     ORDER_ID = By.XPATH, "//h2[contains(@class, 'Modal_modal__title_shadow')]" # Номер заказа в окне деталей заказа 
     ASSEMBLE_THE_BURGER_TTL = By.XPATH, "//h1[text()='Соберите бургер']" #Заголовок конструктора "Соберите бургер"
     
@@ -30,8 +31,7 @@ class Locators:
     LOGIN_SUBMIT = (By.XPATH, '//button[text()="Войти"]') # Кнопка Войти
     
     
-    OVERLAY = (By.XPATH, '//div/div[@class="Modal_modal_overlay__x2ZCr"]') # Перекрытие области видимости во время загрузок
-    
+    OVERLAY = (By.XPATH, '//div/div[@class="Modal_modal_overlay__x2ZCr"]') # Оверлей загрузки страницы
     
     
     
